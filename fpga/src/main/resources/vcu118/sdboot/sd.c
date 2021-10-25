@@ -26,6 +26,8 @@
 
 static volatile uint32_t * const spi = (void *)(SPI_CTRL_ADDR);
 
+extern int topDownCntSet();
+
 static inline uint8_t spi_xfer(uint8_t d)
 {
 	int32_t r;
@@ -219,6 +221,8 @@ static int copy(void)
 int main(void)
 {
 	REG32(uart, UART_REG_TXCTRL) = UART_TXEN;
+
+  topDownCntSet();
 
 	kputs("INIT");
 	sd_poweron();
