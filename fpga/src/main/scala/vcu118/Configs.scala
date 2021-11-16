@@ -68,6 +68,11 @@ class BoomVCU118Config extends Config(
   new WithVCU118Tweaks ++
   new chipyard.MegaBoomConfig)
 
+class LargeBoomVCU118Config extends Config(
+  new WithFPGAFrequency(75) ++
+  new WithVCU118Tweaks ++
+  new chipyard.LargeBoomConfig)
+
 class WithFPGAFrequency(fMHz: Double) extends Config(
   new chipyard.config.WithPeripheryBusFrequency(fMHz) ++ // assumes using PBUS as default freq.
   new chipyard.config.WithMemoryBusFrequency(fMHz)
