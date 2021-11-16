@@ -69,7 +69,7 @@ class BoomVCU118Config extends Config(
   new chipyard.MegaBoomConfig)
 
 class LargeBoomVCU118Config extends Config(
-  new WithFPGAFrequency(50) ++
+  new WithFPGAFrequency(75) ++
   new WithVCU118Tweaks ++
   new chipyard.LargeBoomConfig)
 
