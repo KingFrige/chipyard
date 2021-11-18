@@ -5,6 +5,9 @@
   write_csr(mhpmcounter ## mhpmcnt, 0); \
   write_csr(mhpmevent ## mhpmcnt, HPM_EVENTID_ ## eventid|HPM_EVENTCLASS_ ## enventclass);
 
+#define SHOW_PERFCNT(fmt, mhpmcnt) \
+  printf(fmt, (int)(read_csr(mhpmcounter ## mhpmcnt)));
+
 /*! @brief Macros for valid Event IDs */
 #define HPM_EVENTID_8  (1UL << 8)
 #define HPM_EVENTID_9  (1UL << 9)
@@ -30,8 +33,15 @@
 #define HPM_EVENTID_29 (1UL << 29)
 #define HPM_EVENTID_30 (1UL << 30)
 #define HPM_EVENTID_31 (1UL << 31)
-
-
+#define HPM_EVENTID_32 (1UL << 32)
+#define HPM_EVENTID_33 (1UL << 33)
+#define HPM_EVENTID_34 (1UL << 34)
+#define HPM_EVENTID_35 (1UL << 35)
+#define HPM_EVENTID_36 (1UL << 36)
+#define HPM_EVENTID_37 (1UL << 37)
+#define HPM_EVENTID_38 (1UL << 38)
+#define HPM_EVENTID_39 (1UL << 39)
+#define HPM_EVENTID_40 (1UL << 40)
 
 /*! @brief Macros for valid Event Class */
 #define HPM_EVENTCLASS_0 (0UL)
@@ -45,4 +55,3 @@
 #define HPM_EVENTCLASS_8 (8UL)
 
 #endif
-
